@@ -17,3 +17,14 @@ datos <- datasets::iris
 ### Resultados
 
 ### Conclusiones
+
+
+
+
+# Cambiado desde la rama
+
+```{r}
+
+datos_iris <- datos
+```
+
