@@ -1,8 +1,9 @@
 ---
 title: "Ejercicio_Final"
-format: html
+format: docx
 editor: visual
 ---
+
 ```{r}
 library(tidyverse)
 ```
@@ -10,11 +11,13 @@ library(tidyverse)
 ## Ejercicio Final
 
 ### Introducción
+
 El objetivo de este artículo es analizar propiedades de distintas especies de flor. Para ello se cuentan con una base de datos de 150 observaciones que recogen la longitud y anchura de los pétalos y sépalos de varios individuos de varias especies.
 
 ### Metodología
 
 Cargamos los datos
+
 ```{r}
 datos <- datasets::iris
 summary(datos)
@@ -31,12 +34,13 @@ vir.1<-datos[setosa,]
 mean_SL_vir<- mean(vir.1$Sepal.Length)
 
 ```
+
 Análisis estadístico
 
 ### Resultados
 
 ```{r}
-datos_iris %>% pivot_longer(., cols = -Species) %>% 
+datos %>% pivot_longer(., cols = -Species) %>% 
   ggplot(., aes(x = Species))+
   geom_boxplot(aes(y = value, fill = Species))+facet_wrap(facets = "name", scales ="free")+
   ylab("Length and width (mm)")+theme_bw()
@@ -44,5 +48,4 @@ datos_iris %>% pivot_longer(., cols = -Species) %>%
 
 ### Conclusiones
 
-Las distintas especies muestran 
-
+Las distintas especies muestran diferencias en sus variables, siendo la especie virginica la más grande.
