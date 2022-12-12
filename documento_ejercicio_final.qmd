@@ -3,28 +3,33 @@ title: "Ejercicio_Final"
 format: html
 editor: visual
 ---
+```{r}
+library(tidyverse)
+```
 
 ## Ejercicio Final
 
 ### Introducción
+El objetivo de este artículo es analizar propiedades de distintas especies de flor. Para ello se cuentan con una base de datos de 150 observaciones que recogen la longitud y anchura de los pétalos y sépalos de varios individuos de varias especies.
 
 ### Metodología
 
+Cargamos los datos
 ```{r}
 datos <- datasets::iris
 ```
+Análisis estadístico
 
 ### Resultados
 
+```{r}
+datos_iris %>% pivot_longer(., cols = -Species) %>% 
+  ggplot(., aes(x = Species))+
+  geom_boxplot(aes(y = value, fill = Species))+facet_wrap(facets = "name", scales ="free")+
+  ylab("Length and width (mm)")+theme_bw()
+```
+
 ### Conclusiones
 
-
-
-
-# Cambiado desde la rama
-
-```{r}
-
-datos_iris <- datos
-```
+Las distintas especies muestran 
 
