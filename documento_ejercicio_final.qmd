@@ -17,6 +17,19 @@ El objetivo de este artículo es analizar propiedades de distintas especies de f
 Cargamos los datos
 ```{r}
 datos <- datasets::iris
+summary(datos)
+setosa<- which(datos$Species=="setosa")
+setosa.1<-datos[setosa,]
+mean_SL_setosa<- mean(setosa.1$Sepal.Length)
+
+ver<- which(datos$Species=="versicolor")
+ver.1<-datos[ver,]
+mean_SL_ver<- mean(ver.1$Sepal.Length)
+
+vir<- which(datos$Species=="virginica")
+vir.1<-datos[setosa,]
+mean_SL_vir<- mean(vir.1$Sepal.Length)
+
 ```
 Análisis estadístico
 
